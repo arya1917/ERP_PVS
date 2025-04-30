@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - PVS Sparks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        header a:hover {
+            text-decoration: underline;
+        }
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: 250px;
+            margin: 10px;
+            text-align: center;
+        }
+        .product-card h3 {
+            color: #333;
+        }
+        .product-card p {
+            color: #666;
+            font-size: 14px;
+        }
+        .product-card .price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>PVS Sparks</h1>
+    <p><a href="{{ url_for('login') }}">Login</a> | <a href="{{ url_for('register') }}">Register</a></p>
+</header>
+
+<main>
+    <h2 style="text-align: center; margin-top: 20px;">Our Products</h2>
+    <div class="product-container">
+        {% for product in products %}
+            <div class="product-card">
+                <h3>{{ product.name }}</h3>
+                <p>{{ product.description }}</p>
+                <p class="price">₹{{ product.price_retailer }}</p>
+                <a href="{{ url_for('product_detail', id=product.id) }}">View Details</a>
+            </div>
+        {% endfor %}
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 PVS Sparks. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
