@@ -1,0 +1,73 @@
+/* register.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #fff8dc, #ffeaa7);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 40px;
+    width: 350px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.3);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+h2 {
+    color: #d35400;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form label {
+    color: #2c3e50;
+    font-weight: 500;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+form input, form select {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    outline: none;
+}
+
+form input[type="submit"] {
+    background-color: #f39c12;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #e67e22;
+}
+
+a {
+    margin-top: 15px;
+    display: inline-block;
+    color: #2980b9;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+a:hover {
+    text-decoration: underline;
+}
